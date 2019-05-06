@@ -1,0 +1,33 @@
+{
+  "name": "@paraboly/react-native-card-button",
+  "description": "Customizable Card Button via Paraboly for React Native.",
+  "version": "0.0.20",
+  "keywords": [
+    "react-native",
+    "icons",
+    "javascript",
+    "ui-lib",
+    "rn",
+    "generic",
+    "card",
+    "card-button",
+    "view"
+  ],
+  "homepage": "https://www.freakycoder.com",
+  "bugs": "https://github.com/Paraboly/react-native-card-button/issues",
+  "main": "./lib/src/components/CardButton.js",
+  "repository": "git@github.com:Paraboly/react-native-card-button.git",
+  "author": "Kuray (FreakyCoder) <kurayogun@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-preset-expo": "^5.0.0"
+  },
+  "peerDependencies": {
+    "react": ">= 16.x",
+    "react-native": ">= 0.55.x",
+    "react-native-vector-icons": ">= 6.x.x",
+    "react-native-linear-gradient": ">= 0.2.x",
+    "react-native-material-ripple": ">= 0.8.x",
+    "react-native-dynamic-vector-icons": ">= x.x.x"
+  }
+}
