@@ -61,12 +61,12 @@ npm i @paraboly/react-native-card-button
 	gradientColor={["#48c6", "#2f3a60"]}
 	onPress={_.partial(this.toggle, item).bind(this)}
 	iconComponent={
-		<View style={sharedStyle.center}>
-			<MyIcon
-				size={50}
-				name={'map' }
-				color={"white"}/>
-		</View>
+	<View style={sharedStyle.center}>
+	  <MyIcon
+	  	size={50}
+	  	name={'map' }
+	  	color={"white"}/>
+	</View>
 	}
 />
 ```
