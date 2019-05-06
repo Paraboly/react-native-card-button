@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import colors from "../../styles/colors";
+import colors from "./styles/colors";
 import { Text, View } from "react-native";
 import Ripple from "react-native-material-ripple";
 import Icon from "react-native-dynamic-vector-icons";
@@ -28,7 +28,12 @@ const CardButton = props => {
     return (
       <View style={styles.column}>
         {iconComponent || (
-          <View>
+          <View
+            style={{
+              alignItems: "center",
+              justifyContent: "center"
+            }}
+          >
             <Icon
               size={iconSize}
               name={iconName}
@@ -131,10 +136,10 @@ CardButton.propTypes = {
 };
 
 CardButton.defaultProps = {
-  text: "",
   width: 90,
   height: 90,
-  iconSize: 16,
+  text: "Test",
+  iconSize: 36,
   borderRadius: 20,
   iconName: "traffic",
   end: { x: 0, y: 1 },

@@ -15,7 +15,7 @@ export default class App extends Component {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>Welcome to React Native!</Text>
-        <CardButton />
+        <CardButton text="Trafik Yoğunluğu" />
       </View>
     );
   }
