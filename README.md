@@ -37,7 +37,7 @@ npm i @paraboly/react-native-card-button
 ## Basic Usage
 
 ```js
-<CardButton text="Trafik Yoğunluğu" />
+<CardButton text="Home" />
 ```
 
 ## Solid Background (Non Gradient) Usage
@@ -63,9 +63,9 @@ npm i @paraboly/react-native-card-button
 	iconComponent={
 		<View style={sharedStyle.center}>
 			<MyIcon
-				name={layerConstants.ICON_MAP[layer.type].name || 'map' }
 				size={50}
-				color={!layer.active ? colors.theme.light.lightenGrey : "white"}/>
+				name={'map' }
+				color={"white"}/>
 		</View>
 	}
 />
