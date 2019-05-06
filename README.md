@@ -36,14 +36,19 @@ npm i @paraboly/react-native-card-button
 
 ## Basic Usage
 
-```ruby
+```js
 <CardButton text="Trafik Yoğunluğu" />
+```
+
+## Solid Background (Non Gradient) Usage
+```js
+<CardButton gradient={false} backgroundColor="#049134" />
 ```
 
 
 ## Advanced Usage
 
-```ruby
+```js
 <CardButton
 	width={75}
 	height={75}
@@ -69,105 +74,25 @@ npm i @paraboly/react-native-card-button
 ### Configuration - Props
 
 
-| Property             |    Type     |   Default    | Description                                                                           |
-| -------------------- | :---------: | :----------: | ------------------------------------------------------------------------------------- |
-| isOpen               |   boolean   |    false     | use this to open modal directly                                                       |
-| coverScreen          |   boolean   |    false     | use this to set your modal covers the whole screen                                    |
-| refName              |   string    |     null     | set a reference name for the modal, this is for dynamic usage of the modal            |
-| backdrop             |   boolean   |    false     | use this to add a backdrop for the modal                                              |
-| modalWidth           |   number    |   dynamic    | use this to set custom modal width                                                    |
-| modalHeight          |   number    |   dynamic    | use this to set custom modal height                                                   |
-| modalBottom          |   number    | height * 0.6 | use this to change where modal will be appear depends on the bottom                   |
-| generateButtons      |    array    |     null     | use this to generate buttons as an example (You must create an array with the format) |
-| modalDesignComponent |  component  | ModelDesign  | set your own modal design as a component                                              |
-| title                |   string    |      ""      | change the title                                                                      |
-| context              |   string    |      ""      | change the context                                                                    |
-| rightText            |   string    |      ""      | change the title right side                                                           |
-| titleFontFamily      | font family |  Helvetica   | use this to set the font family for the modal                                         |
-| rightTextFontFamily  | font family |  Helvetica   | use this to set the font family for the modal                                         |
-| contextFontFamily    | font family |  Helvetica   | use this to set the font family for the modal                                         |
-| contextHeight        |   number    |      55      | use this to set context's height                                                      |
-| defaultContext       |   string    |      ""      | use this to set a default context value                                               |
-| titleTextStyle       |    style    |    style     | use this to set your own style for title text                                         |
-| rightTextStyle       |    style    |    style     | use this to set your own style for right title text                                   |
-| contextTextStyle     |    style    |    style     | use this to set your own style for context text                                       |
-| backgroundColor      |    color    |   #a092d6    | use this to set background color for the header part of the modal                     |
-| customIconComponent  |  component  |     null     | use this to set your own custom icon component for the generated buttons              |
-| onOpened             |  function   |     null     | use this to set your own onOpened function                                            |
-| onClosed             |  function   |     null     | use this to set your own onClosed function                                            |
-
-
-## Generated Buttons Usage
-Okey, we can use Dynamic Vector Icons component as generated buttons but we must follow this format. "generateButtons" prop accepts an array and it must be like this : (You can check the example)
-
-```ruby
-buttons = [
-    {
-      size: 35,
-      name: "cancel",
-      icon: "cancel",
-      color: "#C60817",
-      type: "MaterialIcons",
-      onPress: () => {}
-    },
-    {
-      size: 35,
-      name: "verify",
-      color: "#06CAA6",
-      icon: "verified-user",
-      type: "MaterialIcons",
-      onPress: () => {}
-    }
-  ];
-```
-
-#### Generated Buttons Custom Icon Usage
-
-We can use our own custom icon component as well but still we must follow the above format for the generatedButtons but this time we need to send "customIcon: true" data as well. It let the lib knows that a custom icon will be used and also we need to provide "customIconComponent" to let it knows that which component will be implement. 
-
-CustomIconComponent should be something like the below. It has to be item.icon, item.size and item.color for the usage of generatedButtons.
-
-```ruby
- buttons = [
-    {
-      size: 28,
-      name: "map",
-      icon: "map",
-      color: "#C60817",
-      customIcon: true, // Magic is here, DO NOT FORGET this line!
-      onPress: () => {}
-    },
-    {
-      size: 28,
-      color: "#06CAA6",
-      customIcon: true, // Magic is here, DO NOT FORGET this line!
-      icon: "announcement",
-      name: "announcement",
-      onPress: () => {}
-    }
-  ];
-```
-
-```ruby
-<GenericModal
-  isOpen={true}
-  backdrop
-  title="Title"
-  ref="testModal"
-  refName="testModal"
-  context="Test Modal"
-  generateButtons={this.getButtons()}
-  contextTextStyle={styles.contextTextStyle}
-  backgroundColor={colors.theme.light.default}
-  customIconComponent={
-      <MyIcon
-          name={item.icon}
-          size={item.size}
-          color={item.color || colors.theme.light.primaryDark}
-       />
-    }
-/>
-```
+| Property                    |    Type     |              Default              | Description                                                                     |
+| --------------------------- | :---------: | :-------------------------------: | ------------------------------------------------------------------------------- |
+| gradient                    |   boolean   |               true                | if you do not want to use card button with gradient color, simply make it false |
+| width                       |   number    |                90                 | change the card button's width                                                  |
+| height                      |   number    |                90                 | change the card button's height                                                 |
+| start                       |   object    |          { x: 0, y: 1 }           | change the gradient's start way                                                 |
+| end                         |   object    |          { x: 0, y: 1 }           | change the gradient's end way                                                   |
+| text                        |   string    |               Test                | use this to set card button's below text                                        |
+| gradientColors              | color array | ["#f9f7b4", "#f7c77e", "#e8ba6b"] | use this to set your own gradient colors                                        |
+| modalBottom                 |   number    |           height * 0.6            | use this to change where modal will be appear depends on the bottom             |
+| borderRadius                |   number    |                20                 | change the border radius                                                        |
+| iconName                    |   string    |              traffic              | change the icon itself                                                          |
+| iconSize                    |   number    |                36                 | change the icon's size                                                          |
+| iconType                    |   string    |           MaterialIcons           | change the icon's type                                                          |
+| iconColor                   |    color    |             "#cdcfd6"             | change the icon's color                                                         |
+| rippleColor                 |    color    |             "#678fee"             | change the ripple color                                                         |
+| fontFamily                  | font family |              default              | use this to set your own font family                                            |
+| backgroundColor             |    color    |             "#fcfcfc"             | change the background color if you want to use solid color                      |
+| rippleContainerBorderRadius |   number    |                20                 | change the ripple's border radius                                               |
 
 ## Author
 
