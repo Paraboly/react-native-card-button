@@ -1,7 +1,7 @@
 {
   "name": "@paraboly/react-native-card-button",
   "description": "Customizable Card Button via Paraboly for React Native.",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "keywords": [
     "react-native",
     "icons",
